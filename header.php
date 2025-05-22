@@ -1,12 +1,19 @@
 <link rel="stylesheet" href="css/header.css">
+<link rel="stylesheet" href="https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css">
 
 <header style="padding: 15px 0;">
     <div class="header-div" style="padding-left: 3em;">
         <a href="index.php" class="brand-name" style="display: flex; align-items: center; gap: 10px; text-decoration: none;">
-            <img src="media/logo.png" alt="JLougawan Logo" style="height: 55px;">
+            <img src="media/logo.png" alt="Kalye Comfort Logo" style="height: 55px;">
             <span class="brand-name" style="font-size: 1.5em; font-weight: bold;">Kalye Co.</span>
         </a>
     </div>
+
+    <!-- Hamburger Button (mobile only) -->
+    <button id="menu-toggle" style="display: none; background: none; border: none; cursor: pointer;">
+        <i class='bx bx-menu-wide' style="font-size: 2rem; color: #000;"></i>
+    </button>
+
 
     <div class="header-div">
         <nav>

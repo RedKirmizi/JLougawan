@@ -4,7 +4,8 @@
     
         <!-- Brand -->
         <div class="footer-brand" style="padding: 40px;">
-            <h2>JLougawan</h2>
+            <!-- <h2>Kalye Co.</h2> -->
+            <h2 class="brand-name" style="font-size: 3rem;">Kalye Comfort</h2>
             <p>Serving authentic Filipino porridge with<br>love and tradition since 2025.</p>
         </div>
 
@@ -24,7 +25,7 @@
             <h4>Contact</h4>
             <p>📍 LPU Cavite</p>
             <p>📞 +63 9123343</p>
-            <p>✉️ admin.lopet@jlougawan.com</p>
+            <p>✉️ admin@KalyeComfort.com</p>
         </div>
 
         <!-- Hours -->
@@ -35,6 +36,6 @@
     </div>
 
     <div class="footer-bottom">
-        &copy; 2025 JLougawan. All rights reserved.
+        &copy; 2025 Kalye Comfort. All rights reserved.
     </div>
 </footer>

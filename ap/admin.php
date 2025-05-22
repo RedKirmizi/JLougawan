@@ -8,7 +8,7 @@
 	<!-- Boxicons -->
 	<link rel="stylesheet" href="https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css">
 	<!-- My CSS -->
-	<link rel="stylesheet" href="/JLougawan/css/admin.css">
+	<link rel="stylesheet" href="/Kalye-Co/css/admin.css">
 </head>
 <body>
 
@@ -99,6 +99,6 @@
 	</section>
 	<!-- CONTENT -->
 
-	<script src="/JLougawan/js/admin.js"></script>
+	<script src="/Kalye Co./js/admin.js"></script>
 </body>
 </html>

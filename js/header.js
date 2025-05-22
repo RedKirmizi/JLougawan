@@ -23,3 +23,14 @@ function adjustHeroMargin() {
     hero.style.marginTop = `${headerHeight}px`;
   }
 }
+
+// yung burger maging x
+const menuToggle = document.getElementById('menu-toggle');
+const mobileNav = document.getElementById('mobile-nav');
+const icon = menuToggle.querySelector('i');
+
+menuToggle.addEventListener('click', () => {
+  mobileNav.classList.toggle('show');
+  icon.classList.toggle('bx-menu');
+  icon.classList.toggle('bx-x');
+});
