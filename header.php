@@ -41,6 +41,10 @@
                     echo '<a href="logout.php">Logout</a>';
                 } elseif ($currentPage === 'menu.php') {
                     echo '<button id="cartBtn" style="background: none; border: none; cursor: pointer;"><img src="media/icons/bag.png" alt="Cart" style="width: 26px; height: 26px;"></button>';
+                } elseif ($currentPage === 'register.php') {
+                    echo '<a href="login.php">Login</a>';
+                    echo '<a href="index.php">Back</a>';
+
                 }
 
             ?>
