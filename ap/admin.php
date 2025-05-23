@@ -99,6 +99,6 @@
 	</section>
 	<!-- CONTENT -->
 
-	<script src="/Kalye Co./js/admin.js"></script>
+	<script src="/Kalye-Co/js/admin.js"></script>
 </body>
 </html>
