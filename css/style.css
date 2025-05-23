@@ -427,6 +427,10 @@ main {
     color: #fff;
 }
 
+.footer-brand {
+    padding: 20px;
+}
+
 .footer-brand p {
     margin-top: 0;
 }

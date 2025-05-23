@@ -3,8 +3,7 @@
     <div class="footer-container">
     
         <!-- Brand -->
-        <div class="footer-brand" style="padding: 40px;">
-            <!-- <h2>Kalye Co.</h2> -->
+        <div class="footer-brand">
             <h2 class="brand-name" style="font-size: 3rem;">Kalye Comfort</h2>
             <p>Serving authentic Filipino porridge with<br>love and tradition since 2025.</p>
         </div>
