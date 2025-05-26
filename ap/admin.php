@@ -42,12 +42,6 @@
 		</ul>
 		<ul class="side-menu">
 			<li>
-				<a href="#">
-					<i class='bx bxs-cog' ></i>
-					<span class="text">Settings</span>
-				</a>
-			</li>
-			<li>
 				<a href="logout.php" class="logout">
 					<i class='bx bxs-log-out-circle' ></i>
 					<span class="text">Logout</span>
@@ -72,7 +66,6 @@
 				</div>
 			</form>
 			<!-- Custom Night Mode Switch -->
-			<!-- From Uiverse.io by 00Kubi --> 
 			<label class="theme-switch">
 			<input id="switch-mode" class="theme-switch__checkbox" type="checkbox" />
 			<div class="theme-switch__container">
@@ -118,10 +111,9 @@
 		<!-- NAVBAR -->
 
 		<!-- MAIN -->
-	    <?php include("dashboardn.php"); ?>
+	    <?php include("dashboard.php"); ?>
 	    <?php include("store.php"); ?>
 	    <?php include("users.php"); ?>
-	    <?php include("analytics.php"); ?>
 		<!-- MAIN -->
 	</section>
 	<!-- CONTENT -->

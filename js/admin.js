@@ -98,3 +98,27 @@ document.addEventListener('DOMContentLoaded', () => {
 
 });
 
+// MY STORE NAV FUNCTION
+function showCategory(category) {
+    const categories = ['base', 'beverage', 'addon', 'add'];
+    categories.forEach(cat => {
+        document.getElementById(cat).style.display = (cat === category) ? 'block' : 'none';
+    });
+
+    document.querySelectorAll('.store-tab').forEach(tab => {
+        tab.classList.remove('active');
+    });
+
+    const btnMap = {
+        base: 'Base Foods',
+        beverage: 'Beverages',
+        addon: 'Add Ons',
+		add: 'Add Products'
+    };
+
+    document.querySelectorAll('.store-tab').forEach(tab => {
+        if (tab.textContent.trim() === btnMap[category]) {
+            tab.classList.add('active');
+        }
+    });
+}
