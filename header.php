@@ -25,7 +25,7 @@
                 } elseif ($currentPage === 'index.php') {
                     echo '<a href="menu.php">Menu</a>';
                     echo '<a href="#about">About</a>';
-                    echo '<a href="contact.php">Contact</a>';
+                    echo '<a href="#footer">Contact</a>';
                 }
             ?>
         </nav>
@@ -44,7 +44,9 @@
                 } elseif ($currentPage === 'register.php') {
                     echo '<a href="login.php">Login</a>';
                     echo '<a href="index.php">Back</a>';
-
+                } elseif ($currentPage === 'login.php') {
+                    echo '<a href="register.php">Register</a>';
+                    echo '<a href="index.php">Back</a>';
                 }
 
             ?>

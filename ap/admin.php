@@ -55,7 +55,7 @@
 				</a>
 			</li>
 			<li>
-				<a href="#" class="logout">
+				<a href="logout.php" class="logout">
 					<i class='bx bxs-log-out-circle' ></i>
 					<span class="text">Logout</span>
 				</a>
@@ -85,7 +85,7 @@
 				<span class="num">8</span>
 			</a>
 			<a href="#" class="profile">
-				<img src="img/people.png">
+				<img src="../media/logo.png">
 			</a>
 		</nav>
 		<!-- NAVBAR -->

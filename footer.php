@@ -1,4 +1,6 @@
-<footer class="footer">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<footer class="footer" id="footer">
             
     <div class="footer-container">
     
@@ -14,17 +16,22 @@
             <ul>
             <li><a href="index.php">Home</a></li>
             <li><a href="menu.php">Menu</a></li>
-            <li><a href="about.php">About Us</a></li>
-            <li><a href="contact.php">Contact</a></li>
+            <li><a href="#about">About Us</a></li>
+            <div class="footer-socials">
+                <a href="https://facebook.com/yourpage" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://twitter.com/yourpage" target="_blank" rel="noopener noreferrer"><i class="fab fa-x-twitter"></i></a>
+                <a href="https://instagram.com/yourpage" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+            </div>
+
             </ul>
         </div>
 
         <!-- Contact Info -->
         <div class="footer-column">
             <h4>Contact</h4>
-            <p>📍 LPU Cavite</p>
-            <p>📞 +63 9123343</p>
-            <p>✉️ admin@KalyeComfort.com</p>
+            <p>📍 General Trias, Cavite</p>
+            <p>📞 +63 912 345 6789</p>
+            <p>✉️ admin@kalyecomfort.com</p>
         </div>
 
         <!-- Hours -->
