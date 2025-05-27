@@ -20,9 +20,15 @@ document.addEventListener('DOMContentLoaded', () => {
 	const menuBar = document.querySelector('#content nav .bx.bx-menu');
 	const sidebar = document.getElementById('sidebar');
 
-	menuBar.addEventListener('click', function () {
-		sidebar.classList.toggle('hide');
-	})
+	menuBar.onclick = () => {
+	if (sidebar.classList.contains('hide')) {
+		sidebar.classList.remove('hide');
+	} else {
+		sidebar.classList.add('hide');
+	}
+	};
+
+
 
 
 

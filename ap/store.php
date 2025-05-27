@@ -19,7 +19,7 @@
     </div>
 
     <div id="base" class="table-data category-section" style="margin-top: 0;">
-        <div class="table-data">
+        <div class="table-data" style="padding-top:0;">
             <div class="order">
                 <h2 style="text-align: center; margin-bottom: 24px; color: #fc921b;">Base Foods</h2>
                 <table>
@@ -51,7 +51,7 @@
     </div>
 
     <div id="beverage" class="table-data category-section" style="display: none;">
-        <div class="table-data">
+        <div class="table-data" style="padding-top:0;">
             <div class="order">
                 <h2 style="text-align: center; margin-bottom: 24px; color: #fc921b;">Beverages</h2>
                 <table>
@@ -83,7 +83,7 @@
     </div>
                     
     <div id="addon" class="table-data category-section" style="display: none;">
-        <div class="table-data">
+        <div class="table-data" style="padding-top:0;">
             <div class="order">
                 <h2 style="text-align: center; margin-bottom: 24px; color: #fc921b;">Add Ons</h2>
                 <table>
@@ -115,7 +115,7 @@
     </div>
 
     <div id="add" class="table-data category-section" style="display: none;">
-        <div class="table-data">
+        <div class="table-data" style="padding-top:0;">
             <div class="order">
                 <h2 style="text-align: center; margin-bottom: 24px; color: #fc921b;">Add Product</h2>
             </div>

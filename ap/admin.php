@@ -17,7 +17,7 @@
 	<section id="sidebar">
 		<a href="#" class="brand">
 			<i class='bx bx-fingerprint' style="font-size: 36px;"></i>
-			<span class="text">Welcome, Admin</span>
+			<span class="text">AdminHub</span>
 		</a>
 		<ul class="side-menu top">
 			<li class="active">
@@ -57,7 +57,7 @@
 	<section id="content">
 		<!-- NAVBAR -->
 		<nav>
-			<i class='bx bx-menu' style="font-size: 24px;"></i>
+			<i class="bx bx-menu" style="font-size: 24px;" ></i>
 			<form action="#">
 				<!-- search bar hidden, i ain't got time for that -->
 				<div class="form-input" style="display: none;">

@@ -40,8 +40,10 @@ html {
 }
 
 body.dark {
-	--light: #0C0C1E;
-	--grey: #060714;
+	/* --light: #0C0C1E; */
+	/* --grey: #060714; */
+	--light: #001a2c;
+  --grey: #1E2230;
 	--dark: #FBFBFB;
 }
 
