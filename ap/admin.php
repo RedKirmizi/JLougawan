@@ -15,10 +15,10 @@
 
 	<!-- SIDEBAR -->
 	<section id="sidebar">
-		<a href="#" class="brand">
+		<div class="brand">
 			<i class='bx bx-fingerprint' style="font-size: 36px;"></i>
 			<span class="text">AdminHub</span>
-		</a>
+		</div>
 		<ul class="side-menu top">
 			<li class="active">
 				<a href="#" data-section="dashboard-section">

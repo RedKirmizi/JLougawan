@@ -40,8 +40,6 @@ html {
 }
 
 body.dark {
-	/* --light: #0C0C1E; */
-	/* --grey: #060714; */
 	--light: #001a2c;
   --grey: #1E2230;
 	--dark: #FBFBFB;
@@ -1091,6 +1089,141 @@ body {
 
 
 /* MY STORE DESIGN */
+/* Add Product Form Styling */
+.product-form {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+}
+
+.product-form .form-group {
+	background: var(--grey);
+	border-radius: 16px;
+	padding: 16px;
+	display: flex;
+	flex-direction: column;
+}
+
+.product-form .form-group label {
+	font-weight: 600;
+	color: var(--dark);
+	margin-bottom: 8px;
+}
+
+.product-form .form-group input,
+.product-form .form-group select,
+.product-form .form-group textarea {
+	padding: 12px;
+	border-radius: 10px;
+	border: 1px solid var(--light);
+	background: var(--light);
+	color: var(--dark);
+	font-family: var(--poppins);
+	font-size: 14px;
+	width: 100%;
+	box-sizing: border-box;
+}
+
+.product-form .form-group textarea {
+	resize: vertical;
+	min-height: 100px;
+}
+
+.product-form .btn-download {
+	width: fit-content;
+	align-self: center;
+	padding: 12px 24px;
+	border-radius: 24px;
+	background: var(--orange);
+	color: var(--light);
+	font-weight: 600;
+	font-size: 16px;
+	border: none;
+	cursor: pointer;
+  font-family: "Montserrat", sans-serif;
+}
+
+.product-form .btn-download:hover {
+	background: #e67e1c; /* Slightly darker orange */
+}
+
+.price-wrapper {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	max-width: 200px;
+}
+
+.price-wrapper input {
+	flex: 1;
+	text-align: center;
+	padding: 8px;
+	font-size: 14px;
+	border-radius: 10px;
+	border: 1px solid var(--light);
+	background: var(--light);
+	color: var(--dark);
+	appearance: none; /* Hides native arrows */
+	-moz-appearance: textfield;
+}
+
+.price-wrapper input::-webkit-inner-spin-button,
+.price-wrapper input::-webkit-outer-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+
+.price-btn {
+	background-color: var(--orange);
+	color: var(--light);
+	border: none;
+	border-radius: 10px;
+	padding: 8px 12px;
+	cursor: pointer;
+	font-size: 16px;
+	font-weight: bold;
+	transition: background-color 0.2s ease;
+  font-family: "Montserrat", sans-serif;
+}
+
+.price-btn:hover {
+	background-color: #e67e1c;
+}
+
+.custom-file-wrapper {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+}
+
+.custom-file-btn {
+	background-color: var(--orange);
+	color: var(--light);
+	border: none;
+	border-radius: 10px;
+	padding: 8px 14px;
+	cursor: pointer;
+	font-size: 14px;
+	transition: background-color 0.2s ease;
+}
+
+.custom-file-btn:hover {
+	background-color: #e67e1c;
+}
+
+#file_name {
+	font-size: 14px;
+	color: var(--dark);
+	font-style: italic;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	max-width: 200px;
+}
+
+
+
+/* modal */
 .modal {
     display: none;
     position: fixed;
