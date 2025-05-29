@@ -1,19 +1,11 @@
 <?php
-    session_start();
-    //pag walang nakalogin,
-    //ibato sa index.php
-    if(!isset($_SESSION['user_id'])){
-        header("Location:index.php");
-        exit();
-    }
-    //pag may nakalogin
-    //delete session, bato sa index.php
+session_start();
+// Destroy session or logout logic here
+session_destroy();
 
-    else{
-        $_SESSION = array();
-        session_destroy();
-        setcookie('PHPSESSID', '', time()-3600,'/', '', 0, 0);
-        header("Location:index.php");
-        exit();
-    }
+// Start session again to set message
+session_start();
+$_SESSION['logout_message'] = "You have successfully logged out.";
+header("Location: /Kalye-Co/index.php");
+exit();
 ?>

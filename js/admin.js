@@ -27,16 +27,21 @@ document.addEventListener('DOMContentLoaded', () => {
 	// === Sidebar Navigation Section Switching ===
 	document.querySelectorAll('#sidebar .side-menu a').forEach(link => {
 		link.addEventListener('click', function (e) {
-			e.preventDefault();
-			document.querySelectorAll('#sidebar .side-menu li').forEach(li => li.classList.remove('active'));
-			this.parentElement.classList.add('active');
+			// Only prevent default if this link has data-section attribute (sidebar internal navigation)
+			if (this.hasAttribute('data-section')) {
+				e.preventDefault();
+				document.querySelectorAll('#sidebar .side-menu li').forEach(li => li.classList.remove('active'));
+				this.parentElement.classList.add('active');
 
-			document.querySelectorAll('.main-section').forEach(section => section.style.display = 'none');
-			const targetId = this.getAttribute('data-section');
-			const target = document.getElementById(targetId);
-			if (target) target.style.display = 'block';
+				document.querySelectorAll('.main-section').forEach(section => section.style.display = 'none');
+				const targetId = this.getAttribute('data-section');
+				const target = document.getElementById(targetId);
+				if (target) target.style.display = 'block';
+			}
+			// If no data-section attribute, do nothing — allow default behavior (like logout)
 		});
 	});
+
 
 	// === Add Product: Category Toggle Logic ===
 	const categorySelect = document.getElementById('category_select');

@@ -1,3 +1,13 @@
+<?php
+session_start();
+
+$logoutMessage = "";
+if (isset($_SESSION['logout_message'])) {
+    $logoutMessage = $_SESSION['logout_message'];
+    unset($_SESSION['logout_message']);
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,6 +21,12 @@
 </head>
 <body>
     <?php include 'header.php'; ?>
+    <?php if ($logoutMessage): ?>
+        <div id="logout-notification" class="notification">
+            <?php echo htmlspecialchars($logoutMessage); ?>
+        </div>
+    <?php endif; ?>
+
     
     <div class="hero-image">
         <div class="hero-text">

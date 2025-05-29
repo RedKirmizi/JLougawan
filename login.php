@@ -1,10 +1,12 @@
+<?php session_start();?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Kalye Co. - Register</title>
+    <title>Kalye Co. - Login</title>
 
     <!-- Boxicons -->
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
@@ -53,7 +55,6 @@
                     if ($result_admin && mysqli_num_rows($result_admin) == 1) {
                         // Start admin session
                         $admin_data = mysqli_fetch_array($result_admin, MYSQLI_ASSOC);
-                        session_start();
                         $_SESSION['admin_id'] = $admin_data['admin_id'];
                         $_SESSION['username'] = $admin_data['username'];
                         $_SESSION['role'] = 'admin';
@@ -67,7 +68,6 @@
                 } else {
                     // User login
                     $user_data = mysqli_fetch_array($result, MYSQLI_ASSOC);
-                    session_start();
                     $_SESSION['user_id'] = $user_data['user_id'];
                     $_SESSION['firstname'] = $user_data['firstname'];
                     $_SESSION['role'] = 'user';
@@ -106,7 +106,7 @@
             </div>
 
             <div id="login-form-div">
-                <form autocomplete="off" action="" method="post">
+                <form autocomplete="off" action="login.php" method="post">
                     <h2>Login</h2>
                     <div class="login-inputs">
 
