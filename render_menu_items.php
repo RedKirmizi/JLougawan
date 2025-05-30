@@ -30,18 +30,14 @@ $type = $_GET['id'] ?? 'basefood_id';
 switch ($type) {
     case 'addon_id': //for displaying the side dishes in the menu also to avoid duplication of items
         $query = "
-            SELECT a.addon_id, a.name, a.price, a.image_url, a.category_id
+            SELECT a.*
             FROM addons a
-            INNER JOIN (
-                SELECT name, price, category_id, MIN(addon_id) AS min_id
+            JOIN (
+                SELECT MIN(addon_id) as min_id
                 FROM addons
                 WHERE is_available = 1 AND price > 0
                 GROUP BY name, price, category_id
-            ) sub ON a.name = sub.name 
-                AND a.price = sub.price
-                AND a.category_id = sub.category_id
-                AND a.addon_id = sub.min_id
-            WHERE a.is_available = 1 AND a.price > 0
+            ) sub ON a.addon_id = sub.min_id
             ORDER BY a.name;
         ";
         $idField = 'addon_id';
