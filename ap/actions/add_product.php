@@ -74,7 +74,7 @@ switch ($category) {
 }
 
 if ($stmt->execute()) {
-    header("Location: ../store.php");
+    echo "success";
     exit();
 } else {
     die("Execute failed: " . $stmt->error);

@@ -6,7 +6,7 @@ window.addEventListener('DOMContentLoaded', () => {
           setTimeout(() => {
               notification.remove(); // remove from DOM after fade out
           }, 500);
-      }, 2000); // visible for 4 seconds
+      }, 2000);
   }
 
   let lastScrollY = window.scrollY;

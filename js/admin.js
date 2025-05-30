@@ -114,4 +114,84 @@ function showCategory(category) {
 			tab.classList.add('active');
 		}
 	});
+
+	// ADD PRODUCT NOTIFICATION
+	const productForm = document.getElementById('productForm');
+	const notification = document.getElementById('notification');
+
+	if (productForm) {
+		productForm.addEventListener('submit', function (e) {
+			e.preventDefault(); // Stop form from refreshing the page
+
+			const formData = new FormData(productForm);
+
+			fetch('actions/add_product.php', {
+				method: 'POST',
+				body: formData
+			})
+			.then(res => res.text())
+			.then(data => {
+				if (data.includes('success')) {
+					// Show notification
+					notification.style.display = 'block';
+					notification.textContent = 'Product added successfully!';
+
+					// Reset form fields
+					productForm.reset();
+
+					// Hide after 3 seconds
+					setTimeout(() => {
+						notification.style.display = 'none';
+					}, 3000);
+				} else {
+					notification.style.display = 'block';
+					notification.style.backgroundColor = '#f8d7da';
+					notification.style.color = '#721c24';
+					notification.style.borderColor = '#f5c6cb';
+					notification.textContent = 'Error adding product.';
+				}
+			})
+			.catch(error => {
+				console.error('Error:', error);
+				notification.style.display = 'block';
+				notification.style.backgroundColor = '#f8d7da';
+				notification.style.color = '#721c24';
+				notification.style.borderColor = '#f5c6cb';
+				notification.textContent = 'Something went wrong.';
+			});
+		});
+	}
+}
+
+
+function openDeleteModal(id, table) {
+	if (confirm("Are you sure you want to delete this item?")) {
+		fetch("actions/delete_product.php", {
+			method: "POST",
+			headers: {
+				"Content-Type": "application/x-www-form-urlencoded"
+			},
+			body: `id=${encodeURIComponent(id)}&table=${encodeURIComponent(table)}`
+		})
+		.then(response => response.text())
+		.then(data => {
+			if (data.trim() === "success") {
+				alert("Product deleted successfully.");
+				// Remove the deleted product's row from the table:
+				const selector = `a[onclick*="'${id}'"][onclick*="'${table}'"]`; // find the delete link with matching id & table
+				const deleteLink = document.querySelector(selector);
+				if (deleteLink) {
+					const row = deleteLink.closest('tr');
+					if (row) row.remove();
+				}
+				// No page reload
+			} else {
+				alert("Error deleting product: " + data);
+			}
+		})
+		.catch(error => {
+			console.error("Fetch error:", error);
+			alert("Network error while deleting product.");
+		});
+	}
 }

@@ -13,6 +13,7 @@
         </div>
     </div>
 
+    <!-- BASE FOODS -->
     <div id="base" class="table-data category-section" style="margin-top: 0;">
         <div class="table-data" style="padding-top:0;">
             <div class="order">
@@ -35,7 +36,7 @@
                         <td><?= $row['is_available'] ? 'Yes' : 'No' ?></td>
                         <td>
                             <a href="edit_product_form.php?id=<?= $row['basefood_id'] ?>">Edit</a> |
-                            <a href="#" onclick="event.preventDefault(); openDeleteModal('<?= $row['basefood_id'] ?>', 'base_foods')">Delete</a>
+                            <a href="actions/delete_product.php" onclick="event.preventDefault(); openDeleteModal('<?= $row['basefood_id'] ?>', 'base_foods')">Delete</a>
                         </td>
                     </tr>
                     <?php endwhile; ?>
@@ -45,6 +46,7 @@
         </div>
     </div>
 
+    <!-- BEVERAGE -->
     <div id="beverage" class="table-data category-section" style="display: none;">
         <div class="table-data" style="padding-top:0;">
             <div class="order">
@@ -67,7 +69,7 @@
                         <td><?= $row['is_available'] ? 'Yes' : 'No' ?></td>
                         <td>
                             <a href="edit_product_form.php?id=<?= $row['beverage_id'] ?>">Edit</a> |
-                            <a href="#" onclick="event.preventDefault(); openDeleteModal('<?= $row['beverage_id'] ?>', 'beverages')">Delete</a>
+                            <a href="actions/delete_product.php" onclick="event.preventDefault(); openDeleteModal('<?= $row['beverage_id'] ?>', 'beverages')">Delete</a>
                         </td>
                     </tr>
                     <?php endwhile; ?>
@@ -76,7 +78,9 @@
             </div>
         </div>
     </div>
-                    
+
+    
+    <!-- ADD-ONS -->
     <div id="addon" class="table-data category-section" style="display: none;">
         <div class="table-data" style="padding-top:0;">
             <div class="order">
@@ -99,7 +103,7 @@
                         <td><?= $row['is_available'] ? 'Yes' : 'No' ?></td>
                         <td>
                             <a href="edit_product_form.php?id=<?= $row['addon_id'] ?>">Edit</a> |
-                            <a href="#" onclick="event.preventDefault(); openDeleteModal('<?= $row['addon_id'] ?>', 'addons')">Delete</a>
+                            <a href="actions/delete_product.php" onclick="event.preventDefault(); openDeleteModal('<?= $row['addon_id'] ?>', 'addons')">Delete</a>
                         </td>
                     </tr>
                     <?php endwhile; ?>
@@ -109,12 +113,13 @@
         </div>
     </div>
 
+    <!-- ADD PRODUCT -->
     <div id="add" class="table-data category-section" style="display: none;">
         <div class="table-data" style="padding-top:0;">
             <div class="order">
                 <h2 style="text-align: center; margin-bottom: 24px; color: #fc921b;">Add Product</h2>
-                <form action="store.php" method="post" enctype="multipart/form-data" class="product-form">
-
+                <form id="productForm" action="actions/add_product.php" method="post" enctype="multipart/form-data" class="product-form">
+        
                     <div class="form-group">
                         <label for="category_select">Category</label>
                         <select name="category" id="category_select" required>
@@ -175,6 +180,10 @@
                         </select>
                     </div>
 
+                    <div id="notification" style="display: none; padding: 10px; background-color: #d4edda; color: #155724; border: 1px solid #c3e6cb; border-radius: 5px; margin-top: 15px;">
+                        Product added successfully!
+                    </div>
+
                     <button type="submit" class="btn-download">Add Product</button>
                 </form>
             </div>
@@ -183,16 +192,3 @@
 
 
 </main>
-
-<!-- Delete Confirmation Modal -->
-<!-- <div id="deleteModal" class="modal">
-    <div style="background:#fff; padding:20px; text-align:center; min-width: 300px;">
-        <h3>Are you sure you want to delete this item?</h3>
-        <form method="POST" action="actions/delete_product.php">
-            <input type="hidden" name="id" id="deleteId">
-            <input type="hidden" name="table" id="deleteTable">
-            <button type="submit">Yes, Delete</button>
-            <button type="button" onclick="closeDeleteModal()">Cancel</button>
-        </form>
-    </div>
-</div> -->

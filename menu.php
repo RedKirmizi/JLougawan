@@ -14,37 +14,30 @@
     <?php include 'header.php'; ?>
     <main>
         <h1>Menu</h1>
-    
+
+        <!-- To render the different types of menu items we have per category -->
+        <nav class="menu-nav">
+            <button onclick="location.href='menu.php?id=basefood_id'">Main Dishes</button> 
+            <button onclick="location.href='menu.php?id=addon_id'">Side Dishes</button>
+            <button onclick="location.href='menu.php?id=beverage_id'">Beverages</button>
+        </nav>
+
+        <!-- MENU -->
         <div class="menu-container">
-            
-            <div class="card" onclick="openModal('Lugaw w/ Egg', 'media/menu/lugaw-egg.jpg', 'Warm rice porridge with a soft-boiled egg.', 35)">
-                <img src="media/menu/lugaw-egg.jpg" alt="Lugaw w/ Egg" />
-                <div class="card-content">
-                    <div class="card-title">Lugaw w/ Egg</div>
-                    <div class="card-price">₱35</div>
-                </div>
-            </div>
-
-            <div class="card" onclick="openModal('Pares', 'media/menu/beef-pares.jpg', 'Flavorful beef stew served with rice.', 50)">
-                <img src="media/menu/beef-pares.jpg" alt="Beef Pares"/>
-                <div class="card-content">
-                    <div class="card-title">Pares</div>
-                    <div class="card-price">₱50</div>
-                </div>
-            </div>
-
-            <!-- Add more cards here -->
+            <?php include 'render_menu_items.php'; ?> <!-- Cleaner ver To render menu items Dynamically -->
         </div>
 
-        <!-- Modal -->
+        <!-- Dynamic Modal| For design purposes -->
         <div class="modal" id="itemModal">
             <div class="modal-content">
                 <div class="modal-header">
                     <span id="modalTitle">Item Name</span>
                     <span class="close" onclick="closeModal()">❌</span>
                 </div>
-
+                
                 <div class="modal-body">
+                    <input type="hidden" id="modalId" />
+                    <input type="hidden" id="modalCategoryId"/>
                     <img id="modalImage" src="" alt="Item" />
                     <p id="modalDesc">Description here.</p>
                     <p><strong>Price: ₱<span id="modalPrice">0</span></strong></p>
@@ -60,29 +53,17 @@
                     <p>Add Ons:</p>
 
                     <div id="checklist" class="addons">
-                        <input type="checkbox" id="01" name="addons[]" value="Spring Onions (Free)">
-                        <label for="01">Add Spring Onions (Free)</label>
-
-                        <input type="checkbox" id="02" name="addons[]" value="Chili Garlic (Free)">
-                        <label for="02">Add Chili Garlic (Free)</label>
-
-                        <input type="checkbox" id="03" name="addons[]" value="Garlic chips (₱5)">
-                        <label for="03">Add garlic chips (₱5)</label>
-
-                        <input type="checkbox" id="04" name="addons[]" value="Extra egg (₱17)">
-                        <label for="04">Add extra egg (₱17)</label>
-
-                        <input type="checkbox" id="05" name="addons[]" value="Tokwa't Baboy (₱35)">
-                        <label for="05">Add Tokwa't Baboy (₱35)</label>
-
+                        <!-- for addons toh-->
                     </div>
-
-
                 </div>
-                
+    
                 <div class="modal-footer">
-                    <button onclick="showCart()">Show Cart</button>
-                    <button onclick="addToCart()">Add to Cart</button>
+                    <form method="post" style="display:inline;">
+                        <button type="button" onclick="showCart()">Show Cart</button>
+                    </form>
+                    <form action="addcart.php" method="post" style="display:inline;">
+                        <button type="button" onclick="addToCart()">Add to Cart</button>
+                    </form>
                 </div>
             </div>
         </div>
@@ -112,7 +93,7 @@
                     </div>
                     <div style="display: flex; justify-content: space-between;">
                         <span>Shipping</span>
-                        <span>₱50.00</span>
+                        <span id="shippingFee">₱0.00</span>
                     </div>
                     <div style="display: flex; justify-content: space-between;">
                         <span>VAT (12%)</span>
@@ -125,7 +106,9 @@
                 </div>
 
                 <div class="modal-footer">
-                    <button>Checkout</button>
+                    <form id="checkoutForm" method="post">
+                        <button type="submit">Checkout</button>
+                    </form>
                 </div>
             </div>
         </div>

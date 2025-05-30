@@ -28,7 +28,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $stmt->bind_param("i", $id);
 
     if ($stmt->execute()) {
-        header("Location: ../admin.php");
+        echo "success";
         exit();
     } else {
         echo "Error deleting product.";
