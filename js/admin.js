@@ -195,3 +195,75 @@ function openDeleteModal(id, table) {
 		});
 	}
 }
+
+// EDIT PRODUCT MODAL
+function openEditModal(id, category) {
+    const modal = document.getElementById("editProductModal");
+    const modalContent = document.getElementById("modalContent");
+
+    // Load form via AJAX
+    fetch(`edit_product_form.php?id=${id}&category=${category}`)
+        .then(res => res.text())
+        .then(html => {
+            modalContent.innerHTML = html;
+            modal.style.display = "flex";
+        })
+        .catch(err => {
+            modalContent.innerHTML = "<p>Error loading form.</p>";
+        });
+}
+
+// Close modal when clicking outside
+document.getElementById("editProductModal").addEventListener("click", function(e) {
+    if (e.target.id === "editProductModal") {
+        this.style.display = "none";
+    }
+});
+
+// Define globally so HTML can access it
+function openDeleteModal2(id) {
+    document.getElementById('deleteId2').value = id;
+    const modal = document.getElementById('deleteModal2');
+    modal.style.display = 'flex';
+}
+
+function closeDeleteModal2() {
+    const modal = document.getElementById('deleteModal2');
+    modal.style.display = 'none';
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    const deleteUserForm = document.getElementById('deleteUserForm2');
+
+    if (deleteUserForm) {
+        deleteUserForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const formData = new FormData(this);
+
+            fetch('actions/delete_user.php', {
+                method: 'POST',
+                body: formData
+            })
+            .then(res => res.text())
+            .then(response => {
+                if (response.trim() === 'success') {
+                    alert('User deleted successfully.');
+                    closeDeleteModal2();
+
+                    const userId = formData.get('id');
+                    const deleteLink = document.querySelector(`a[onclick*="'${userId}'"]`);
+                    if (deleteLink) {
+                        const row = deleteLink.closest('tr');
+                        if (row) row.remove();
+                    }
+                } else {
+                    alert('Error deleting user: ' + response);
+                }
+            })
+            .catch(err => {
+                alert('Network error: ' + err);
+            });
+        });
+    }
+});

@@ -35,7 +35,7 @@
                         <td>₱<?= number_format($row['price'], 2) ?></td>
                         <td><?= $row['is_available'] ? 'Yes' : 'No' ?></td>
                         <td>
-                            <a href="edit_product_form.php?id=<?= $row['basefood_id'] ?>">Edit</a> |
+                            <a href="#" onclick="openEditModal(<?= $row['basefood_id'] ?>, 'base_foods'); return false;">Edit</a> |
                             <a href="actions/delete_product.php" onclick="event.preventDefault(); openDeleteModal('<?= $row['basefood_id'] ?>', 'base_foods')">Delete</a>
                         </td>
                     </tr>
@@ -68,7 +68,7 @@
                         <td>₱<?= number_format($row['price'], 2) ?></td>
                         <td><?= $row['is_available'] ? 'Yes' : 'No' ?></td>
                         <td>
-                            <a href="edit_product_form.php?id=<?= $row['beverage_id'] ?>">Edit</a> |
+                            <a href="#" onclick="openEditModal(<?= $row['beverage_id'] ?>, 'beverages'); return false;">Edit</a> |
                             <a href="actions/delete_product.php" onclick="event.preventDefault(); openDeleteModal('<?= $row['beverage_id'] ?>', 'beverages')">Delete</a>
                         </td>
                     </tr>
@@ -102,7 +102,7 @@
                         <td>₱<?= number_format($row['price'], 2) ?></td>
                         <td><?= $row['is_available'] ? 'Yes' : 'No' ?></td>
                         <td>
-                            <a href="edit_product_form.php?id=<?= $row['addon_id'] ?>">Edit</a> |
+                            <a href="#" onclick="openEditModal(<?= $row['addon_id'] ?>, 'addons'); return false;">Edit</a> |
                             <a href="actions/delete_product.php" onclick="event.preventDefault(); openDeleteModal('<?= $row['addon_id'] ?>', 'addons')">Delete</a>
                         </td>
                     </tr>
@@ -190,5 +190,10 @@
         </div>
     </div>
 
-
+    <!-- Modal Structure -->
+    <div id="editProductModal" style="display:none;">
+        <div id="modalContent">
+            <!-- AJAX-loaded content -->
+        </div>
+    </div>
 </main>
